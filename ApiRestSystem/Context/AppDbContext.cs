@@ -9,5 +9,6 @@ namespace ApiRestSystem.Context
 
         }
         public DbSet<Productos> Productos { get; set; }
+        public DbSet<Usuarios> Usuarios { get; set; }
     }
 }

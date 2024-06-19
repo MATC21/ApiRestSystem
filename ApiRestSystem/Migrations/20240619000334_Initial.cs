@@ -24,6 +24,21 @@ namespace ApiRestSystem.Migrations
                 {
                     table.PrimaryKey("PK_Productos", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Usuarios",
+                columns: table => new
+                {
+                    IdUsuario = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Correo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Clave = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuarios", x => x.IdUsuario);
+                });
         }
 
         /// <inheritdoc />
@@ -31,6 +46,9 @@ namespace ApiRestSystem.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Productos");
+
+            migrationBuilder.DropTable(
+                name: "Usuarios");
         }
     }
 }
